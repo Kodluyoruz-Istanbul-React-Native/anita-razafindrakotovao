@@ -2,11 +2,27 @@ import React, { Component } from "react";
 import {View, Text, TextInput} from "react-native";
 import {Soyad} from "./Soyad";
 
+let x = "test";
+
 class App extends Component {
   
   constructor(props){
     super(props);
 
+  }
+  state = {
+    isim:""
+  };
+  myState = {
+    isim: "",
+    yas: 30
+  };
+  setMyState(newState){
+    this.myState = {
+      ...this.myState,
+      ...newState
+    }
+    this.forceUpdate();
   }
   
   componentDidMount(){
@@ -19,6 +35,7 @@ class App extends Component {
 
   }
   render(){
+
     return (
       <View
       style={{
@@ -36,8 +53,18 @@ class App extends Component {
           backgroundColor: "white",
           borderRadius: 5,
           padding: 10
-        }}>
+        }}
+        >
           Adınızı giriniz:
+        </Text>
+        <Text
+        style={{
+          color: "black",
+          fontSize: 10,
+          padding: 10
+        }}
+        >
+          Hoş geldiniz {this.myState.isim}
         </Text>
         <TextInput
         style={{
@@ -49,7 +76,14 @@ class App extends Component {
           padding: 10,
           marginTop: 5,
           width: "75%"
-        }}>
+        }}
+        onChangeText={(d)=>{
+          const tmp = {isim:d};
+          this.setMyState({
+            isim:d
+          })
+        }}
+        >
           
         </TextInput>
         <Soyad
