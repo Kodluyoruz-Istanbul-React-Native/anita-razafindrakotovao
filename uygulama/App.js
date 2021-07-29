@@ -6,6 +6,7 @@ class App extends Component {
     super(props);
 
   }
+  
   componentDidMount(){
 
   }
@@ -17,13 +18,28 @@ class App extends Component {
   }
   render(){
     return (
-      <View>
-        <Text>
-          Hello world.
+      <View
+      style={{
+        flex:1,
+        backgroundColor: "purple",
+        justifyContent: "center",
+        alignItems: "center"
+      }}
+      >
+        <Text
+        style={{
+          fontWeight: "bold",
+          color: "black",
+          fontSize: 20,
+          backgroundColor: "white",
+          borderRadius: 5,
+          padding: 10
+        }}>
+          Adınızı giriniz:
         </Text>
       </View>
     );
   }
 }
 
-export default App;
+export {App};
