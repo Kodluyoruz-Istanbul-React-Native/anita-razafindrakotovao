@@ -35,7 +35,7 @@ class App extends Component {
 
   }
   render(){
-
+    const {isim}=this.state;
     return (
       <View
       style={{
@@ -64,7 +64,7 @@ class App extends Component {
           padding: 10
         }}
         >
-          Hoş geldiniz {this.myState.isim}
+          Hoş geldiniz {isim}
         </Text>
         <TextInput
         style={{
